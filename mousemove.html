@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+		body{
+			width:700px;
+		}
+		div{
+			background-color: red;
+		}
+
+		.img1{
+			position:absolute;
+			background: url("img1.jpg") no-repeat;
+			background-size: cover;
+			top:0;
+			width: 500px;
+			
+			height:100%;
+			z-index:3;
+			
+		}
+
+		.img2{
+			background: url("img2.jpg") no-repeat;
+			background-size: cover;
+			position:absolute;
+			top:0;
+			
+			width: 500px;
+			height:100%;
+			
+		}
+
+	</style>
+</head>
+<body>
+<div class="beforeafter">
+
+<div class="img1"></div>
+<div class="img2"></div>
+</div>
+<script>
+	var curse = document.querySelector('.img1');
+	var curse2 = document.querySelector('.beforeafter');
+
+	curse2.addEventListener('mousemove', function(event){
+		console.log(event.offsetX);
+		curse.style.width = event.offsetX + 'px';
+	});
+
+/* RIEN A VOIR MAIS ASTUCE POUR TP CLAVIER. LE BUT EST D'AFFICHER UN MESSAGE LORSQU4ON APPUIE SUR A. A CORRESPOND A 65 SUR 
+LE CLAVIER. QD ON PASSE A LA TOUCHE SUIVANTE (DONC Z), ON FAIT "+25" SOIT 90 
+	document.addEventListener('keydown', function(event){
+		if (event.keyCode === 65){
+			console.log("coucou");
+		}
+
+	});
+
+voir le site asquare.net/javascript/tests/KeyCode.html
+
+*/
+</script>
+	
+</body>
+</html>
